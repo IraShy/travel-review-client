@@ -10,7 +10,7 @@ class Reviews extends React.Component {
     this.setState({ reviews: data });
   };
 
-  deleteCountry = async (id) => {
+  deleteReview = async (id) => {
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`, {
       method: "DELETE"
     })
