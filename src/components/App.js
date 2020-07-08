@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import Navbar from './../shared/Navbar'
 import Reviews from './Reviews'
 import Review from './Review'
+import CreateReview from './CreateReview'
+import NoMatch from './NoMatch'
 
 const App = () => {
   return (
@@ -10,7 +12,9 @@ const App = () => {
     <Navbar />
     <Switch>
       <Route exact path={["/reviews", "/"]} component={Reviews} />
+      <Route exact path="/reviews/create" component={CreateReview} />
       <Route exact path="/reviews/:id" component={Review} /> 
+      <Route component={NoMatch} />
     </Switch>
     </>
   );
