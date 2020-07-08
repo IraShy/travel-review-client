@@ -11,7 +11,7 @@ class Reviews extends React.Component {
   };
 
   deleteCountry = async (id) => {
-    await fetch(`http://localhost:3000/reviews/${id}`, {
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`, {
       method: "DELETE"
     })
     this.getReviews()
