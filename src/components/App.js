@@ -5,6 +5,7 @@ import Reviews from './Reviews'
 import Review from './Review'
 import CreateReview from './CreateReview'
 import NoMatch from './NoMatch'
+import EditReview from './EditReview'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <Switch>
       <Route exact path={["/reviews", "/"]} component={Reviews} />
       <Route exact path="/reviews/create" component={CreateReview} />
+      <Route exact path="/reviews/:id/edit" component={EditReview} />
       <Route exact path="/reviews/:id" component={Review} /> 
       <Route component={NoMatch} />
     </Switch>

@@ -33,6 +33,10 @@ class Reviews extends React.Component {
           >
             <button>Read review</button>
           </Link>
+          <Link 
+            to={`/reviews/${review.id}/edit`}>
+            <button>Edit</button>
+          </Link>
           {/* <span onClick={() => this.deleteCountry(country.id)}><button>Delete</button></span> */}
 
           <button onClick={() => this.deleteReview(review.id)}>Delete</button>
