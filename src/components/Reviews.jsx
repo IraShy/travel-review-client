@@ -5,7 +5,7 @@ class Reviews extends React.Component {
   state = { reviews: [] };
 
   getReviews = async () => {
-    const response = await fetch("http://localhost:3000/reviews");
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews`);
     const data = await response.json();
     this.setState({ reviews: data });
   };
