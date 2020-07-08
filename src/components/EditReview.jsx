@@ -1,7 +1,7 @@
 import React from "react";
 
 class EditReview extends React.Component {
-  state = { country: "", year: null, content: "", title: "", loading: true, id: this.props.match.params.id };
+  state = { country: this.props.country, year: null, content: "", title: this.props.title, loading: true, id: this.props.match.params.id };
   onInputChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value
@@ -10,13 +10,13 @@ class EditReview extends React.Component {
 
   onFormSubmit = async (event) => {
     event.preventDefault();
-    const { id, title, country, year, description } = this.state
+    const { id, title, country, year, content } = this.state
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, country, year, description }),
+      body: JSON.stringify({ title, country, year, content }),
     });
     this.props.history.push("/reviews");
   };
@@ -24,12 +24,12 @@ class EditReview extends React.Component {
   async componentDidMount() {
     const { id } = this.state
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`);
-    const { title, country, year, description } = await response.json();
-    this.setState({ title, country, year, description, loading: false });
+    const { title, country, year, content } = await response.json();
+    this.setState({ title, country, year, content, loading: false });
   }
 
   render() {
-    const { title, country, year, description, loading } = this.state;
+    const { title, country, year, content, loading } = this.state;
     return (
       !loading && (
         <div className="container">
@@ -39,6 +39,7 @@ class EditReview extends React.Component {
             type="text"
             name="title"
             id="title"
+            value={title}
             onChange={this.onInputChange}
           />
           <label htmlFor="country">Country</label>
@@ -46,6 +47,7 @@ class EditReview extends React.Component {
             type="text"
             name="country"
             id="country"
+            value={country}
             onChange={this.onInputChange}
           />
           <label htmlFor="year">Year</label>
@@ -53,12 +55,14 @@ class EditReview extends React.Component {
             type="text"
             name="year"
             id="year"
+            value={year}
             onChange={this.onInputChange}
           />
           <label htmlFor="content">Description</label>
           <textarea
             name="content"
             id="content"
+            value={content}
             onChange={this.onInputChange}
           ></textarea>
           <input type="submit" value="Edit" />
