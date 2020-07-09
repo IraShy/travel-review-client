@@ -5,17 +5,19 @@ class Reviews extends React.Component {
   state = { reviews: [] };
 
   getReviews = async () => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews`);
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/reviews`
+    );
     const data = await response.json();
     this.setState({ reviews: data });
   };
 
   deleteReview = async (id) => {
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`, {
-      method: "DELETE"
-    })
-    this.getReviews()
-  }
+      method: "DELETE",
+    });
+    this.getReviews();
+  };
 
   renderReviews = () => {
     return this.state.reviews.map((review, index) => {
@@ -33,13 +35,20 @@ class Reviews extends React.Component {
           >
             <button>Read review</button>
           </Link>
-          <Link 
-            to={`/reviews/${review.id}/edit`}>
+          <Link to={`/reviews/${review.id}/edit`}>
             <button>Edit</button>
           </Link>
           {/* <span onClick={() => this.deleteCountry(country.id)}><button>Delete</button></span> */}
 
-          <button onClick={() => this.deleteReview(review.id)}>Delete</button>
+          <button
+            onClick={() =>
+              window.confirm("Are you sure?")
+                ? this.deleteReview(review.id)
+                : this.props.history.goBack
+            }
+          >
+            Delete
+          </button>
 
           <hr />
         </div>
