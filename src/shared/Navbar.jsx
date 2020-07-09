@@ -8,8 +8,9 @@ const NavBar = () => {
     <nav>
       
       <Navbar bg="dark" variant="dark">
+       
       <Nav className="justify-content-end" activekey="/">
-        {/* <Navbar fixed="top" /> */}
+        <Navbar fixed="bottom" />
         <Nav.Link href = "/">Home</Nav.Link>
         <Nav.Link href = "/reviews">Reviews</Nav.Link>
         <Nav.Link href = "/reviews/create">Add a review</Nav.Link>
