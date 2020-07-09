@@ -67,6 +67,7 @@ class EditReview extends React.Component {
           ></textarea>
           <input type="submit" value="Edit" />
         </form>
+       <button onClick={this.props.history.goBack}>Cancel</button>
       </div>
       )
     );
