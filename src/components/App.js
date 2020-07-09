@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
-import Navbar from './../shared/Navbar'
+import Navbar from '../shared/Navbar'
 import Reviews from './Reviews'
 import Review from './Review'
 import CreateReview from './CreateReview'
 import NoMatch from './NoMatch'
 import EditReview from './EditReview'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
