@@ -10,7 +10,7 @@ class CreateReview extends React.Component {
 
   onFormSubmit = async (event) => {
     event.preventDefault();
-    await fetch("http://localhost:3000/reviews", {
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
