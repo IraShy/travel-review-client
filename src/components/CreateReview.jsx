@@ -1,4 +1,5 @@
 import React from "react";
+import Form from 'react-bootstrap/Form'
 
 class CreateReview extends React.Component {
   onInputChange = (event) => {
@@ -23,6 +24,8 @@ class CreateReview extends React.Component {
   render() {
     return (
       <div className="container">
+
+
         <form onSubmit={this.onFormSubmit}>
           <label htmlFor="title">Title</label>
           <input
@@ -31,6 +34,8 @@ class CreateReview extends React.Component {
             id="title"
             onChange={this.onInputChange}
           />
+        
+
           <label htmlFor="country">Country</label>
           <input
             type="text"
@@ -38,6 +43,8 @@ class CreateReview extends React.Component {
             id="country"
             onChange={this.onInputChange}
           />
+
+
           <label htmlFor="year">Year</label>
           <input
             type="text"
@@ -45,12 +52,16 @@ class CreateReview extends React.Component {
             id="year"
             onChange={this.onInputChange}
           />
+
+
           <label htmlFor="content">Description</label>
           <textarea
             name="content"
             id="content"
             onChange={this.onInputChange}
           ></textarea>
+
+
           <input type="submit" value="Add" />
         </form>
         <button onClick={this.props.history.goBack}>Cancel</button>
