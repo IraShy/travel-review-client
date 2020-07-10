@@ -32,7 +32,11 @@ class Reviews extends React.Component {
         <Card border="dark" style={{width: '18rem', display: 'flex', flexDirection: 'row'}}>
           
         <div key={index}>
+<<<<<<< HEAD
           <Card.Body>
+=======
+        <Card.Body>
+>>>>>>> 39c5be9986dd6fe418aeab81493e87230539ce18
          <Card.Title>{review.title}</Card.Title>
          </Card.Body>
           <Card.Img variant="top" src={review.image} />
