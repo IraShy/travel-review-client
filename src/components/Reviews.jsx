@@ -28,13 +28,18 @@ class Reviews extends React.Component {
   renderReviews = () => {
     return this.state.reviews.map((review, index) => {
       return (
-        // <CardDeck>
-        <Card border="dark" style= {{ width: '18rem', justifyContent: 'space-evenly'}}>
+        
+        <Card border="dark" style={{width: '18rem', display: 'flex', flexDirection: 'row'}}>
           
         <div key={index}>
+<<<<<<< HEAD
+          <Card.Body>
+=======
         <Card.Body>
+>>>>>>> 39c5be9986dd6fe418aeab81493e87230539ce18
          <Card.Title>{review.title}</Card.Title>
          </Card.Body>
+          <Card.Img variant="top" src={review.image} />
          <ListGroup className="list-group-flush" variant= "Primary">
           <ListGroupItem>Country: {review.country}</ListGroupItem>
           <ListGroupItem>Year: {review.year}</ListGroupItem>
