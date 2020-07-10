@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 class Review extends React.Component {
   deleteReview = async (id) => {
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/reviews/${id}`, {
