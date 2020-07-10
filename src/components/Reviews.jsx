@@ -26,6 +26,7 @@ class Reviews extends React.Component {
           <h1>{review.title}</h1>
           <p>Country: {review.country}</p>
           <p>Year: {review.year}</p>
+          <img src={review.image} />
           {/* <p>Description: {review.content}</p> */}
           <Link
             to={{
