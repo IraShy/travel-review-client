@@ -35,6 +35,7 @@ class Reviews extends React.Component {
         <Card.Body>
          <Card.Title>{review.title}</Card.Title>
          </Card.Body>
+         <Card.Img variant="top" src={review.image} />
          <ListGroup className="list-group-flush" variant= "Primary">
           <ListGroupItem>Country: {review.country}</ListGroupItem>
           <ListGroupItem>Year: {review.year}</ListGroupItem>

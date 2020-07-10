@@ -67,8 +67,8 @@ class CreateReview extends React.Component {
           ></textarea>
 
           <input type="submit" value="Add" />
+          <button onClick={this.props.history.goBack}>Cancel</button>
         </form>
-        <button onClick={this.props.history.goBack}>Cancel</button>
       </div>
       </Container>
     );
