@@ -26,8 +26,6 @@ class CreateReview extends React.Component {
     return (
       <Container>
       <div className="container">
-
-
         <form onSubmit={this.onFormSubmit}>
           <label htmlFor="title">Title</label>
           <input
@@ -36,7 +34,6 @@ class CreateReview extends React.Component {
             id="title"
             onChange={this.onInputChange}
           />
-        
 
           <label htmlFor="country">Country</label>
           <input
@@ -46,7 +43,6 @@ class CreateReview extends React.Component {
             onChange={this.onInputChange}
           />
 
-
           <label htmlFor="year">Year</label>
           <input
             type="text"
@@ -55,6 +51,13 @@ class CreateReview extends React.Component {
             onChange={this.onInputChange}
           />
 
+          <label htmlFor="image">Image</label>
+          <input
+            type="text"
+            name="image"
+            id="image"
+            onChange={this.onInputChange}
+          />
 
           <label htmlFor="content">Description</label>
           <textarea
@@ -62,7 +65,6 @@ class CreateReview extends React.Component {
             id="content"
             onChange={this.onInputChange}
           ></textarea>
-
 
           <input type="submit" value="Add" />
         </form>

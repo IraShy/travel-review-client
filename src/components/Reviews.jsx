@@ -32,7 +32,7 @@ class Reviews extends React.Component {
         <Card border="dark" style= {{ width: '18rem', justifyContent: 'space-evenly'}}>
           
         <div key={index}>
-          <Card.Body>
+        <Card.Body>
          <Card.Title>{review.title}</Card.Title>
          </Card.Body>
          <ListGroup className="list-group-flush" variant= "Primary">
