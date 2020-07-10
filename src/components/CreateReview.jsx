@@ -1,5 +1,6 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
+import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
 
 class CreateReview extends React.Component {
   onInputChange = (event) => {
@@ -23,6 +24,7 @@ class CreateReview extends React.Component {
 
   render() {
     return (
+      <Container>
       <div className="container">
         <form onSubmit={this.onFormSubmit}>
           <label htmlFor="title">Title</label>
@@ -68,6 +70,7 @@ class CreateReview extends React.Component {
         </form>
         <button onClick={this.props.history.goBack}>Cancel</button>
       </div>
+      </Container>
     );
   }
 }
